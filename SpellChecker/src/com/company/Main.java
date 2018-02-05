@@ -6,11 +6,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(new File ("C:\\Users\\weisja15\\Documents\\GitHub\\221-Data-Structures-and-Algorithms\\SpellChecker\\src\\com\\company\\dictionary.txt"));
+        Scanner inFile = null;
+        FileInputStream myDict = null;
 
-        String word1 = input.nextLine();
+        myDict = new FileInputStream("./resources/dictionary.txt");
 
-        System.out.println(word1);
+        inFile = new Scanner(myDict);
+        String word1 = inFile.nextLine();
+
+        System.out.println("word1");
 
     }
 }
