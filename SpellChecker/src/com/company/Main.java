@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner inFile = null;
         FileInputStream myDict = null;
@@ -14,7 +14,7 @@ public class Main {
         inFile = new Scanner(myDict);
         String word1 = inFile.nextLine();
 
-        System.out.println("word1");
+        System.out.println(word1);
 
     }
 }
