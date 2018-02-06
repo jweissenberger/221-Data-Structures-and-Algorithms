@@ -17,7 +17,7 @@ public class Main {
             }
 
             try {
-                Scanner input = new Scanner(new File(args[1])); //to open another file need to use args[1]
+                Scanner input = new Scanner(new File(args[0])); //to open another file need to use args[1]
                 //and separate the arguments by a space in run-edit configurations
                 while (input.hasNext()){
                     String line = input.nextLine();
@@ -31,17 +31,10 @@ public class Main {
                 System.exit(2);
             }
 
-        /*
-        Scanner inFile = null;
-        FileInputStream myDict = null;
-
-@ -15,6 +25,6 @@ public class Main {
-        String word1 = inFile.nextLine();
-
-        System.out.println(word1);
-
-        */
 
     }
+
+
+
 }
 
