@@ -16,5 +16,9 @@ public class Main {
         List1.addFirst("David");
 	    System.out.println(List1.isEmpty());
 
+	    for(String data : List1){
+	        System.out.println(data);
+        }
+
     }
 }
