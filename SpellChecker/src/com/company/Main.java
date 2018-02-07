@@ -1,5 +1,5 @@
 /*
- * Jack Weissenberger Febuary 2018, Lab 1 Spell Checker
+ * Jack Weissenberger February 2018, Lab 1 Spell Checker
  * Spell Checker that reads in a text file(text.txt) and a dictionary file(dictionary.txt) that compares every word in
  * the text file to the dictionary and outputs the number of words, number of unique words, number of misspelled words
  * and prints all of the misspelled words
