@@ -1,8 +1,8 @@
 /*
- * Jack Weissenberger Febuary 2018
+ * Jack Weissenberger Febuary 2018, Lab 1 Spell Checker
  * Spell Checker that reads in a text file(text.txt) and a dictionary file(dictionary.txt) that compares every word in
- * the text file to the dictionary and outputs the number of words, number of unique words and prints all of the
- * misspelled words
+ * the text file to the dictionary and outputs the number of words, number of unique words, number of misspelled words
+ * and prints all of the misspelled words
  ********NOTE******** I HAVE THE DICTIONARY AS MY FIRST ARGUMENT AND THE TEXT FILE AS MY SECOND ARGUMENT, THE PROGRAM
  * WILL NOT RUN PROPERLY IF THEY ARE SWITCHED
  */
