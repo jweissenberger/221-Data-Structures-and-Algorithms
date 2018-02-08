@@ -86,6 +86,9 @@ public class DLinkedList implements Iterable<String> {
          * list
          *
          */
+        if (isEmpty()){
+            return -1;
+        }
         if (head.data.equals(data)){
             return head.indx;
         }
@@ -108,6 +111,9 @@ public class DLinkedList implements Iterable<String> {
          * Outputs: a boolean that is True if the input data is in the list and False if it is not
          *
          */
+        if (isEmpty()){
+            return false;
+        }
         if (head.data.equals(data)){
             return true;
         }
@@ -131,7 +137,12 @@ public class DLinkedList implements Iterable<String> {
          * Outputs: A string with all of the data within the list as a single string with no spaces between the words
          *
          */
-        String all = head.data;
+
+        if (isEmpty()){
+            return " ";
+        }
+
+        String all  = head.data;
         Node second = head.next;
         while (second !=null){
             all = all.concat(second.data);
@@ -152,6 +163,12 @@ public class DLinkedList implements Iterable<String> {
          * Outputs: prints out the all of the indexes of the list, which should be a list from 0 to size-1
          *
          */
+
+        if (isEmpty()){
+            System.out.println("Empty list");
+            System.exit(3);
+        }
+
         System.out.println(head.indx);
         Node second = head.next;
         while (second !=null){

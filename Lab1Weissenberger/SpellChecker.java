@@ -10,7 +10,6 @@
 
 package com.company;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -66,9 +65,8 @@ public class Main {
 
         //Initialize variables, ArrayList and Doubly linked list
         int numWords = 0;
-        long numUWords = 0;
         int misspelled = 0;
-        ArrayList<String> Words = new ArrayList<>();
+        DLinkedList UWords = new DLinkedList();
         DLinkedList MisWords = new DLinkedList();
 
 
@@ -108,8 +106,11 @@ public class Main {
                             MisWords.addFirst(word);
                         }
 
-                        //adds the word to the arrayList of all words
-                        Words.add(word);
+                        //if the word is not in the list of unique words add it
+                        if (!UWords.contains(word)){
+                            UWords.addFirst(word);
+                        }
+
                         numWords += 1;
                         word = "";
                     }
@@ -122,7 +123,11 @@ public class Main {
                             misspelled += 1;
                             MisWords.addFirst(word);
                         }
-                        Words.add(word);
+
+                        //if the word is not in the list of unique words add it
+                        if (!UWords.contains(word)){
+                            UWords.addFirst(word);
+                        }
 
                         numWords += 1;
                     }
@@ -140,10 +145,8 @@ public class Main {
 
         System.out.println("\n" + "Number of Words: " + numWords);
 
-        //counts the number of unique words by converting the arraylist to a stream and then counts only the distinct
-        //elements
-        numUWords = Words.stream().distinct().count();
-        System.out.println("Number of Unique Words: " + numUWords);
+        //print the number of unique words by printing the size of the UWords list
+        System.out.println("Number of Unique Words: " + UWords.size);
 
         System.out.println("Number of Misspelled Words: " + misspelled);
 

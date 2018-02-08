@@ -14,7 +14,7 @@ dictionary file and then adding it to the list of misspelled words if it is not 
 in the doubly linked list. Checking the dictionary is done using the checkDict method. After each word is found in the number
 of words is incremented by one, that word is stored into the ArrayList Words and if the word is misspelled, it is added to the
 doubly linked list and the number of misspelled words is incremented by one. The number of unique words are calculated by
-converting the arraylist to a stream and then counts only the distinct elements because it can be done in one line of code.
+checking the size of the UWords Doubly linked list which adds a new word to the list when if it is not contained already.
 The number of words, unique words, and misspelled words are all printed to the user. The misspelled words are then printed 
 by using the enhanced for loop of the doubly linked list.
 
