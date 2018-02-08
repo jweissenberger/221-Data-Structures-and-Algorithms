@@ -8,16 +8,19 @@ public class DLinkedList implements Iterable<String> {
         private String data;
         private Node next;
         private Node prev;
+        private int indx;
 
         public Node(String data, Node next, Node prev){
             this.data = data;
             this.next = next;
             this.prev = prev;
+            indx = 0;
         }
     }
 
     Node head;
     Node tail;
+    public int size =0;
 
     public DLinkedList(){
         head = null;
@@ -29,10 +32,68 @@ public class DLinkedList implements Iterable<String> {
         Node second = head.next;
         if (second != null){ //there is already at least one node
             second.prev = head;
+
+            //increment each of the next of the indexes
+            while (second !=null){
+                second.indx += 1;
+                second = second.next;
+            }
+
         }
 
         else{ //case that we are adding to an empty list
             tail = head;
+        }
+        size+=1;
+    }
+
+    public int indexOf(String data){
+        if (head.data.equals(data)){
+            return head.indx;
+        }
+        Node second = head.next;
+        while (second !=null){
+            if (second.data.equals(data)){
+                return second.indx;
+            }
+            second = second.next;
+        }
+        return -1;
+    }
+
+    public boolean contains(String data){
+        if (head.data.equals(data)){
+            return true;
+        }
+        Node second = head.next;
+        while (second !=null){
+            if (second.data.equals(data)){
+                return true;
+            }
+            second = second.next;
+        }
+        return false;
+    }
+
+    public String toString(){
+        String all = head.data;
+        Node second = head.next;
+        while (second !=null){
+            all = all.concat(second.data);
+            second = second.next;
+        }
+
+        return all;
+
+    }
+
+
+    public void printIndx(){
+        System.out.println(head.indx);
+        Node second = head.next;
+        while (second !=null){
+            System.out.println(second.indx);
+            second = second.next;
         }
     }
 
@@ -43,6 +104,10 @@ public class DLinkedList implements Iterable<String> {
         else{
             return false;
         }
+    }
+
+    public int size(){
+        return size;
     }
 
 

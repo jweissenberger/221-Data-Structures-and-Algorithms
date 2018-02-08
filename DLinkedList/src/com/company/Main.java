@@ -14,11 +14,21 @@ public class Main {
 
 	    List1.addFirst("Jack");
         List1.addFirst("David");
+        List1.addFirst("Kathleen");
+        List1.addFirst("Paul");
 	    System.out.println(List1.isEmpty());
 
 	    for(String data : List1){
 	        System.out.println(data);
         }
+
+        System.out.println(List1.size);
+
+	    //List1.printIndx();
+
+        //System.out.println(List1.indexOf("blob"));
+        System.out.println(List1.contains("Kathleen"));
+        System.out.println(List1.toString());
 
     }
 }
