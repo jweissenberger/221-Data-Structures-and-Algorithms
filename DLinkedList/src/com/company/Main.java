@@ -29,6 +29,8 @@ public class Main {
         //System.out.println(List1.indexOf("blob"));
         System.out.println(List1.contains("Kathleen"));
         System.out.println(List1.toString());
+        List1.swap();
+        System.out.println(List1.toString());
 
     }
 }

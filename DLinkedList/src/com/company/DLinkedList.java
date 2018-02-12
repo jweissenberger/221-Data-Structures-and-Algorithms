@@ -193,6 +193,33 @@ public class DLinkedList implements Iterable<String> {
         }
     }
 
+    public void swap(){
+        /*
+         * This method swaps the first two nodes in the list
+         *
+         * Inputs: N/A
+         * Outputs: N/A but the first two nodes in the list are swapped
+         *
+         */
+
+        if (isEmpty()){
+            System.out.println("Empty list");
+            System.exit(3);
+        }
+
+        if (size == 1){
+            System.out.println("There is only one node in the list so the first two cannot be swapped");
+            System.exit(4);
+        }
+
+        String temp = head.data;
+        Node second = head.next;
+        head.data = second.data;
+        second.data = temp;
+
+
+    }
+
     public int size(){
         /*
          * This method returns the size of the list by printing out the variable size that is incremented by one every
