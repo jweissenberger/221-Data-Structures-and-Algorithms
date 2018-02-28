@@ -82,11 +82,17 @@ public class WCLinkedList implements Iterable<String> {
             return false;
         }
         if (head.w.getData().equals(data)){
+            head.w.incr();
             return true;
         }
         Node second = head.next;
         while (second !=null){
             if (second.w.getData().equals(data)){
+                second.w.incr();
+                //*****Think this one needs to be in the derrived class off this
+                if (second.w.getCount() > second.prev.w.getCount()){
+                    swap(second);
+                }
                 return true;
             }
             second = second.next;
@@ -148,6 +154,16 @@ public class WCLinkedList implements Iterable<String> {
             head = tail;
         }
         size +=1;
+    }
+
+    public void swap(Node current){
+        /*
+         * Swaps the input node with the node above it
+         */
+        WordCount temp = new WordCount();
+        temp.setData(current.prev.w.getData());
+        current.prev.w.setData(current.w.getData());
+        current.w.setData(temp.getData());
     }
 
     public int size(){

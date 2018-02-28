@@ -16,6 +16,7 @@ public class Main {
         List1.addLast("David");
         List1.addLast("Kathleen");
         List1.addFirst("Paul");
+        List1.contains("Jack");
         for(String data : List1){
             System.out.println(data);
         }
