@@ -1,6 +1,7 @@
 /*
  * Jack Weissenberger February 2018
  * Double Linked List Project CS 221 Data Structures and Algorithms
+ * Just used as a file to to test the functionality of the DLinkedList
  */
 
 package com.company;
