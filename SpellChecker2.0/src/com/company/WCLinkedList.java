@@ -18,16 +18,14 @@ public class WCLinkedList implements Iterable<String> {
          * This node class initializes the data that the node contains, points to the next node and the previous node
          * and also contains the index of the node
          */
-        private String data;
         private Node next;
         private Node prev;
-        private int indx;
+        private WordCount w = new WordCount();
 
         public Node(String data, Node next, Node prev){
-            this.data = data;
+            w.setData(data);
             this.next = next;
             this.prev = prev;
-            indx = 0;
         }
     }
 
@@ -89,12 +87,12 @@ public class WCLinkedList implements Iterable<String> {
         if (isEmpty()){
             return -1;
         }
-        if (head.data.equals(data)){
+        if (head.w.getData().equals(data)){
             return head.indx;
         }
         Node second = head.next;
         while (second !=null){
-            if (second.data.equals(data)){
+            if (second.w.getData().equals(data)){
                 return second.indx;
             }
             second = second.next;
@@ -114,12 +112,12 @@ public class WCLinkedList implements Iterable<String> {
         if (isEmpty()){
             return false;
         }
-        if (head.data.equals(data)){
+        if (head.w.getData().equals(data)){
             return true;
         }
         Node second = head.next;
         while (second !=null){
-            if (second.data.equals(data)){
+            if (second.w.getData().equals(data)){
                 return true;
             }
             second = second.next;
@@ -142,10 +140,10 @@ public class WCLinkedList implements Iterable<String> {
             return " ";
         }
 
-        String all  = head.data;
+        String all  = head.w.getData();
         Node second = head.next;
         while (second !=null){
-            all = all.concat(second.data);
+            all = all.concat(second.w.getData());
             second = second.next;
         }
 
@@ -235,7 +233,7 @@ public class WCLinkedList implements Iterable<String> {
             if (!hasNext()) {
                 throw new NoSuchElementException("Iterator exceeded.");
             }
-            String data = nextNode.data;
+            String data = nextNode.w.getData();
             nextNode = nextNode.next;
             return data;
         }
