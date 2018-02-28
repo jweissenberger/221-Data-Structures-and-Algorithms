@@ -59,11 +59,6 @@ public class WCLinkedList implements Iterable<String> {
         if (second != null){ //there is already at least one node
             second.prev = head;
 
-            //increment each of the next of the indexes
-            while (second !=null){
-                second.indx += 1;
-                second = second.next;
-            }
 
         }
 
@@ -73,32 +68,6 @@ public class WCLinkedList implements Iterable<String> {
         size+=1;
     }
 
-    public int indexOf(String data){
-        /*
-         * This method returns the index of the node that contains the input data and returns -1 if the data is not
-         * found in the string. It does this by iterating though the list, and checking to see if the string being
-         * searched for is equal to the data stored in each node.
-         *
-         * Inputs: String data: the string that is searched for in the double linked list
-         * Outputs: the integer output of the index of the node that contains the data or -1 if the data is not in the
-         * list
-         *
-         */
-        if (isEmpty()){
-            return -1;
-        }
-        if (head.w.getData().equals(data)){
-            return head.indx;
-        }
-        Node second = head.next;
-        while (second !=null){
-            if (second.w.getData().equals(data)){
-                return second.indx;
-            }
-            second = second.next;
-        }
-        return -1;
-    }
 
     public boolean contains(String data){
         /*
@@ -152,28 +121,6 @@ public class WCLinkedList implements Iterable<String> {
     }
 
 
-    public void printIndx(){
-        /*
-         * This method prints out the all of the indexes of the list, which should be a list from 0 to size-1. It does
-         * this by iterating through the list and printing node.indx of each node.
-         *
-         * Inputs: N/A
-         * Outputs: prints out the all of the indexes of the list, which should be a list from 0 to size-1
-         *
-         */
-
-        if (isEmpty()){
-            System.out.println("Empty list");
-            System.exit(3);
-        }
-
-        System.out.println(head.indx);
-        Node second = head.next;
-        while (second !=null){
-            System.out.println(second.indx);
-            second = second.next;
-        }
-    }
 
     public boolean isEmpty(){
         /*
@@ -200,6 +147,7 @@ public class WCLinkedList implements Iterable<String> {
         else{
             head = tail;
         }
+        size +=1;
     }
 
     public int size(){
