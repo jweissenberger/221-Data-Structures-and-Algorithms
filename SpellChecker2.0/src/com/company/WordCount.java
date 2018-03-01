@@ -5,10 +5,6 @@ public class WordCount{
     private String data = "";
     private int count = 0;
 
-    /*public WordCount(String data){
-        this.data = data;
-    }
-    */
 
     public void setData(String data){
         this.data = data;
@@ -20,6 +16,10 @@ public class WordCount{
 
     public void incr(){
         count += 1;
+    }
+
+    public void setCount(int i){
+        count = i;
     }
 
     public int getCount(){

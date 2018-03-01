@@ -11,14 +11,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38785046">
+    <splitter split-orientation="horizontal" split-proportion="0.4182243">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+                <state relative-caret-position="420">
+                  <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -27,19 +27,21 @@
           <file leaf-file-name="WordCount.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/company/WordCount.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+                <state relative-caret-position="336">
+                  <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
                   <folding>
-                    <element signature="e#218#219#0" expanded="true" />
-                    <element signature="e#250#251#0" expanded="true" />
-                    <element signature="e#280#281#0" expanded="true" />
-                    <element signature="e#307#308#0" expanded="true" />
-                    <element signature="e#332#333#0" expanded="true" />
-                    <element signature="e#358#359#0" expanded="true" />
-                    <element signature="e#386#387#0" expanded="true" />
-                    <element signature="e#414#415#0" expanded="true" />
-                    <element signature="e#445#446#0" expanded="true" />
-                    <element signature="e#496#497#0" expanded="true" />
+                    <element signature="e#142#143#0" expanded="true" />
+                    <element signature="e#174#175#0" expanded="true" />
+                    <element signature="e#204#205#0" expanded="true" />
+                    <element signature="e#231#232#0" expanded="true" />
+                    <element signature="e#256#257#0" expanded="true" />
+                    <element signature="e#282#283#0" expanded="true" />
+                    <element signature="e#316#317#0" expanded="true" />
+                    <element signature="e#341#342#0" expanded="true" />
+                    <element signature="e#369#370#0" expanded="true" />
+                    <element signature="e#397#398#0" expanded="true" />
+                    <element signature="e#428#429#0" expanded="true" />
+                    <element signature="e#479#480#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -48,20 +50,32 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+        <leaf>
           <file leaf-file-name="WCLinkedList.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/company/WCLinkedList.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="218">
-                  <caret line="91" column="80" lean-forward="false" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
+                <state relative-caret-position="320">
+                  <caret line="154" column="24" lean-forward="false" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
                   <folding>
-                    <element signature="class#Node#0;class#WCLinkedList#0" expanded="false" />
                     <element signature="method#WCLinkedList#0;class#WCLinkedList#0" expanded="false" />
                     <element signature="method#addFirst#0;class#WCLinkedList#0" expanded="false" />
+                    <element signature="method#contains#0;class#WCLinkedList#0" expanded="false" />
                     <element signature="method#toString#0;class#WCLinkedList#0" expanded="false" />
                     <element signature="method#isEmpty#0;class#WCLinkedList#0" expanded="false" />
-                    <element signature="method#addLast#0;class#WCLinkedList#0" expanded="false" />
+                    <element signature="method#size#0;class#WCLinkedList#0" expanded="false" />
+                    <element signature="class#WCListIterator#0;class#WCLinkedList#0" expanded="false" />
+                    <element signature="method#iterator#0;class#WCLinkedList#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CWCLinkedList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/company/CWCLinkedList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="453">
+                  <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -86,13 +100,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/company/WordCout.java" />
+        <option value="$PROJECT_DIR$/src/com/company/TWCLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/company/WordCount.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/CWCLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/company/WCLinkedList.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="width" value="960" />
     <option name="height" value="1032" />
@@ -207,18 +223,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32524806" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32414553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -259,16 +275,18 @@
         <state relative-caret-position="210">
           <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -278,12 +296,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#Node#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#WCLinkedList#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#addFirst#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#contains#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#toString#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#isEmpty#0;class#WCLinkedList#0" expanded="false" />
-            <element signature="method#addLast#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#size#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="class#WCListIterator#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#iterator#0;class#WCLinkedList#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -301,16 +321,18 @@
         <state relative-caret-position="378">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -320,55 +342,77 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#Node#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#WCLinkedList#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#addFirst#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#contains#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#toString#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#isEmpty#0;class#WCLinkedList#0" expanded="false" />
-            <element signature="method#addLast#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#size#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="class#WCListIterator#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#iterator#0;class#WCLinkedList#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/WordCout.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/TWCLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/WordCount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="336">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
           <folding>
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="420">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/CWCLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/WCLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="91" column="80" lean-forward="false" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
+        <state relative-caret-position="320">
+          <caret line="154" column="24" lean-forward="false" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
           <folding>
-            <element signature="class#Node#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#WCLinkedList#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#addFirst#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#contains#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#toString#0;class#WCLinkedList#0" expanded="false" />
             <element signature="method#isEmpty#0;class#WCLinkedList#0" expanded="false" />
-            <element signature="method#addLast#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#size#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="class#WCListIterator#0;class#WCLinkedList#0" expanded="false" />
+            <element signature="method#iterator#0;class#WCLinkedList#0" expanded="false" />
           </folding>
         </state>
       </provider>

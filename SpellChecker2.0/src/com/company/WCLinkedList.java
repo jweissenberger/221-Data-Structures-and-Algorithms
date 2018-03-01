@@ -13,14 +13,14 @@ import java.util.NoSuchElementException;
 
 public class WCLinkedList implements Iterable<String> {
 
-    private static class Node{
+    public static class Node{
         /*
          * This node class initializes the data that the node contains, points to the next node and the previous node
          * and also contains the index of the node
          */
-        private Node next;
-        private Node prev;
-        private WordCount w = new WordCount();
+        public Node next;
+        public Node prev;
+        public WordCount w = new WordCount();
 
         public Node(String data, Node next, Node prev){
             w.setData(data);
@@ -89,10 +89,11 @@ public class WCLinkedList implements Iterable<String> {
         while (second !=null){
             if (second.w.getData().equals(data)){
                 second.w.incr();
-                //*****Think this one needs to be in the derrived class off this
+                /* /*****Think this one needs to be in the derrived class off this
                 if (second.w.getCount() > second.prev.w.getCount()){
                     swap(second);
                 }
+                */
                 return true;
             }
             second = second.next;
@@ -162,8 +163,11 @@ public class WCLinkedList implements Iterable<String> {
          */
         WordCount temp = new WordCount();
         temp.setData(current.prev.w.getData());
+        temp.setCount(current.prev.w.getCount());
         current.prev.w.setData(current.w.getData());
+        current.prev.w.setCount(current.w.getCount());
         current.w.setData(temp.getData());
+        current.w.setCount(temp.getCount());
     }
 
     public int size(){
