@@ -74,7 +74,6 @@ public class SpellChecker2 {
 
                 //uses .isLetter to check if the character is a letter and then creates a word with a set of characters
                 for (int i = 0; i < (line.length()-1); i++) {
-                    // [also need to include digits]
                     if (Character.isLetter(line.charAt(i)) || Character.isDigit(line.charAt(i))) {
                         //if (Character.isLetter(line.charAt(i))) {
                         word = word + line.charAt(i);
@@ -138,6 +137,7 @@ public class SpellChecker2 {
         //prints out the misspelled words that was stored in the doubly linked list using an enhanced for loop
         for(String data : MisWords){
             System.out.println(data);
+
         }
 
 
