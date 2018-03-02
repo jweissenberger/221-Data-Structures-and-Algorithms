@@ -201,7 +201,7 @@ public class WCLinkedList implements Iterable<String> {
             if (!hasNext()) {
                 throw new NoSuchElementException("Iterator exceeded.");
             }
-            String data = nextNode.w.getData();
+            String data = nextNode.w.getData() + " "  + nextNode.w.getCount();
             nextNode = nextNode.next;
             return data;
         }

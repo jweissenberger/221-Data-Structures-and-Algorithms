@@ -1,48 +1,9 @@
 package com.company;
+import java.util.Dictionary;
 import java.util.Scanner;
 import java.io.*;
 
 public class SpellChecker2 {
-
-    //method that reads and checks the dictionary
-    private static boolean checkDict(String[] args, String word) {
-        /*
-         * Method that reads the dictionary and outputs a boolean True if the word is in the dictionary and false if
-         * is not
-         * Inputs: String [] args: the documents including the dictionary as the first argument
-         *         String word: the word that will be checked against the words in the dictionary
-         *
-         * Outputs: a boolean that is true if the word is in the dictionary and false if it is not
-         *
-         * ****NOTE**** THIS ASSUMES THAT THE DICTIONARY IS THE FIRST (0TH) ARGUMENT
-         *
-         */
-        word = word.toLowerCase();
-        if (args.length < 2) { //the number of files you want to read
-            System.out.println("ussage error ...");
-            System.exit(1);
-        }
-
-
-        try {
-            Scanner input = new Scanner(new File(args[0])); //reading in the dictionary
-            //and separate the arguments by a space in run-edit configurations
-            while (input.hasNext()) {
-                String line = input.nextLine();
-                line = line.toLowerCase();
-
-                if (word.equals(line)) {
-                    return true;
-                }
-
-            }
-
-            input.close();
-        } catch (FileNotFoundException e) {
-            System.exit(2);
-        }
-        return false;
-    }
 
     public static void main(String[] args) {
         //Initialize variables, ArrayList and Doubly linked list
@@ -50,20 +11,60 @@ public class SpellChecker2 {
         int misspelled = 0;
         WCLinkedList UWords = new WCLinkedList();
         WCLinkedList MisWords = new WCLinkedList();
+        WCLinkedList dictionary = new WCLinkedList();
+        int n = 0;
 
 
         //Handels tha exception that there are not to files as arguments
         for (int i = 0; i < args.length; i++){
-            System.out.println(args[i] + " ");
-            if (args.length != 2){ //the number of files you want to read
+            if (args.length < 2){ //the number of files you want to read
                 System.out.println("ussage error ...");
                 System.exit(1);
             }
         }
 
+        if (args[0].equals("-t")){
+            dictionary = new TWCLinkedList();
+            MisWords = new TWCLinkedList();
+            n = 1;
+        }
+
+        if (args[0].equals("-c")){
+            dictionary = new CWCLinkedList();
+            MisWords = new CWCLinkedList();
+            n = 1;
+        }
+
+        if (args[0].equals("-s")){
+            dictionary = new WCLinkedList();
+            MisWords = new WCLinkedList();
+            n = 1;
+        }
+
+
+        //Read the dictionary file into the dictionary list
+        try {
+            Scanner input = new Scanner(new File(args[n])); //reading in the dictionary
+            //and separate the arguments by a space in run-edit configurations
+            while (input.hasNext()) {
+                String line = input.nextLine();
+                line = line.toLowerCase();
+
+                dictionary.addLast(line);
+
+            }
+
+            input.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+            System.exit(2);
+        }
+
+
+        final long startTime = System.currentTimeMillis();
         //try block for opening and reading the text file
         try {
-            Scanner input = new Scanner(new File(args[1])); //scanner for the second argument, which for me is
+            Scanner input = new Scanner(new File(args[n+1])); //scanner for the second argument, which for me is
 
             //reads the next input
             while (input.hasNext()) {
@@ -84,7 +85,7 @@ public class SpellChecker2 {
                         word = word.toLowerCase();
 
                         //check if the word is in the dictionary
-                        if (!checkDict(args, word)){
+                        if (!dictionary.contains(word)){
                             misspelled += 1;
                             MisWords.addFirst(word);
                         }
@@ -102,7 +103,7 @@ public class SpellChecker2 {
                     if (Character.isLetter(line.charAt(i)) && (i == line.length() - 2)) {
                         word = word + line.charAt(i+1);
                         word = word.toLowerCase();
-                        if (!checkDict(args, word)){
+                        if (!dictionary.contains(word)){
                             misspelled += 1;
                             MisWords.addFirst(word);
                         }
@@ -123,8 +124,30 @@ public class SpellChecker2 {
 
         //catch for if the file is not found
         catch (FileNotFoundException e){
+            System.out.println("File not found");
             System.exit(2);
         }
+
+        final long endTime = System.currentTimeMillis();
+
+        try {
+            FileOutputStream fileByteStream = new FileOutputStream("final." + args[n]);
+            PrintWriter outFS = new PrintWriter(fileByteStream);
+            for (String data : dictionary){
+                outFS.println(data);
+            }
+            outFS.flush();
+            fileByteStream.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found");
+            System.exit(2);
+        }
+        catch (IOException e){
+            System.out.println("IOException");
+            System.exit(7);
+        }
+
 
         System.out.println("\n" + "Number of Words: " + numWords);
 
@@ -133,12 +156,9 @@ public class SpellChecker2 {
 
         System.out.println("Number of Misspelled Words: " + misspelled);
 
-        System.out.println("\n" + "Misspelled Words: " + "\n" + "-----------------");
-        //prints out the misspelled words that was stored in the doubly linked list using an enhanced for loop
-        for(String data : MisWords){
-            System.out.println(data);
+        System.out.println("Time to complete: " + (endTime-startTime) + " msec");
 
-        }
+        System.out.println("Managed dictionary written to: final." + args[n]);
 
 
 
