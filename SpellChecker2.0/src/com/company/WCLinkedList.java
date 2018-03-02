@@ -1,9 +1,7 @@
 /*
  * Jack Weissenberger February 2018
- * Double Linked List Project CS 221 Data Structures and Algorithms
- * This file contains the DLinkedList class which is a doubly linked list which contains the following: Node, isEmpty(),
- * contains() size(), indexOf(), addFirst(), and toString(). It also contains an Iterator interface the supports
- * enhanced for loops.
+ * SpellChecker 2.0 CS 221 Data Structures and Algorithms
+ * This file contains the WCLinkedList class which is a doubly linked list
  */
 
 
@@ -146,6 +144,9 @@ public class WCLinkedList implements Iterable<String> {
     }
 
     public void addLast(String data){
+        /*
+         * Adds a node to the end of the linked list
+         */
         tail = new Node(data, null, tail);
         Node second = tail.prev;
         if (second != null){
@@ -159,7 +160,8 @@ public class WCLinkedList implements Iterable<String> {
 
     public void swap(Node A, Node B){
         /*
-         * Swaps the input node with the node above it
+         * Swaps the two inputted nodes
+         * Inputs: Nodes A, B: the two nodes to be swapped
          */
         WordCount temp = new WordCount();
         temp.setData(B.w.getData());
@@ -201,6 +203,7 @@ public class WCLinkedList implements Iterable<String> {
             if (!hasNext()) {
                 throw new NoSuchElementException("Iterator exceeded.");
             }
+            //this allows it to print the data and the counts of the node
             String data = nextNode.w.getData() + " "  + nextNode.w.getCount();
             nextNode = nextNode.next;
             return data;

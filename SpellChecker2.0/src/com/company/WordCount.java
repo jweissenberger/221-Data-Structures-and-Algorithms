@@ -1,3 +1,6 @@
+/*
+ * This is the WordCount Class that stores the node data and count information
+ */
 package com.company;
 
 public class WordCount{
@@ -7,26 +10,33 @@ public class WordCount{
 
 
     public void setData(String data){
+        //this sets the data of the node
+        //inputs: String data: what you want to set the data to
         this.data = data;
     }
 
     public String getData(){
+        //this retrieves the data of the node
         return data;
     }
 
     public void incr(){
+        //this increments the count of the node
         count += 1;
     }
 
     public void setCount(int i){
+        //this sets the count of the node
         count = i;
     }
 
     public int getCount(){
+        //this retrives the count of the node
         return count;
     }
 
     public String toString(){
+        //this prints out the information given in the node
         return getData() + " " + getCount();
     }
 

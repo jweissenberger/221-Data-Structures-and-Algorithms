@@ -1,12 +1,20 @@
+/*
+ * Jack Weissenberger March 2018
+ * SpellChecker 2.0
+ * Spellchecker checks a text file for words and compares it to a dictionary file.
+ * The dictionary file is stored in an auto updating doubly linked list that uses the transpose or count method
+ * depending on if your first command line argument it "-c" for count "-t" for transpose or "-s" or nothing for a regular
+ * non-self updating list
+ */
+
 package com.company;
-import java.util.Dictionary;
 import java.util.Scanner;
 import java.io.*;
 
 public class SpellChecker2 {
 
     public static void main(String[] args) {
-        //Initialize variables, ArrayList and Doubly linked list
+        //Initialize variables, Doubly linked list
         int numWords = 0;
         int misspelled = 0;
         WCLinkedList UWords = new WCLinkedList();
@@ -23,6 +31,8 @@ public class SpellChecker2 {
             }
         }
 
+        //these next three if statements determine what kind of linked list is used for the dictionary and misspelled
+        //words, it also updates the variable n that allows the correct argument to be accessed later on in the code
         if (args[0].equals("-t")){
             dictionary = new TWCLinkedList();
             MisWords = new TWCLinkedList();
@@ -61,7 +71,9 @@ public class SpellChecker2 {
         }
 
 
+        //starts timing the spellchecker
         final long startTime = System.currentTimeMillis();
+
         //try block for opening and reading the text file
         try {
             Scanner input = new Scanner(new File(args[n+1])); //scanner for the second argument, which for me is
@@ -76,7 +88,6 @@ public class SpellChecker2 {
                 //uses .isLetter to check if the character is a letter and then creates a word with a set of characters
                 for (int i = 0; i < (line.length()-1); i++) {
                     if (Character.isLetter(line.charAt(i)) || Character.isDigit(line.charAt(i))) {
-                        //if (Character.isLetter(line.charAt(i))) {
                         word = word + line.charAt(i);
                     }
 
@@ -128,8 +139,10 @@ public class SpellChecker2 {
             System.exit(2);
         }
 
+        //ends the timer
         final long endTime = System.currentTimeMillis();
 
+        //this is the try and catch blocks for the writing of the output file of the dictionary with the number of counts
         try {
             FileOutputStream fileByteStream = new FileOutputStream("final." + args[n]);
             PrintWriter outFS = new PrintWriter(fileByteStream);
@@ -148,6 +161,7 @@ public class SpellChecker2 {
             System.exit(7);
         }
 
+        //these are the print statements that give the statistics of the file
 
         System.out.println("\n" + "Number of Words: " + numWords);
 

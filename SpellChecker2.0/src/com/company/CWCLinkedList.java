@@ -1,3 +1,6 @@
+/*
+ * This is the CWCLinkedList class that extends WCLinkedList
+ */
 package com.company;
 
 public class CWCLinkedList extends WCLinkedList{
@@ -5,7 +8,8 @@ public class CWCLinkedList extends WCLinkedList{
     public boolean contains(String data){
         /*
          * This method returns a boolean True if the input data is in the list and False if it is not. It does this by
-         * checking to see if both the head and tail are defined to be null.
+         * checking to see if both the head and tail are defined to be null. It also uses the update function to move
+         * the current node up the list until it reaches the top or a node with more counts than it
          *
          * Inputs: String data: the string that is searched for in the list
          * Outputs: a boolean that is True if the input data is in the list and False if it is not
@@ -25,11 +29,6 @@ public class CWCLinkedList extends WCLinkedList{
                 update(second);
                 return true;
             }
-            /*
-            if (second.w.getCount() > second.prev.w.getCount()){
-                swap(second);
-            }
-            */
             second = second.next;
         }
 
@@ -37,6 +36,11 @@ public class CWCLinkedList extends WCLinkedList{
     }
 
     private void update(Node current){
+        /*
+         * Moves the current node up the list until it reaches the top or a node with more counts than it
+         *
+         * Inputs: Node current: the node you want to see if it can move up the list
+         */
         while(current.prev != null && current.w.getCount() > current.prev.w.getCount()) {
             swap(current, current.prev);
             current = current.prev;
