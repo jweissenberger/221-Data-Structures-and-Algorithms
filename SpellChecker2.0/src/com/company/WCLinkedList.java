@@ -157,17 +157,17 @@ public class WCLinkedList implements Iterable<String> {
         size +=1;
     }
 
-    public void swap(Node current){
+    public void swap(Node A, Node B){
         /*
          * Swaps the input node with the node above it
          */
         WordCount temp = new WordCount();
-        temp.setData(current.prev.w.getData());
-        temp.setCount(current.prev.w.getCount());
-        current.prev.w.setData(current.w.getData());
-        current.prev.w.setCount(current.w.getCount());
-        current.w.setData(temp.getData());
-        current.w.setCount(temp.getCount());
+        temp.setData(B.w.getData());
+        temp.setCount(B.w.getCount());
+        B.w.setData(A.w.getData());
+        B.w.setCount(A.w.getCount());
+        A.w.setData(temp.getData());
+        A.w.setCount(temp.getCount());
     }
 
     public int size(){

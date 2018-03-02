@@ -14,7 +14,7 @@ public class TWCLinkedList extends WCLinkedList {
         while (second !=null){
             if (second.w.getData().equals(data)){
                 second.w.incr();
-                swap(second);
+                swap(second, second.prev);
                 return true;
             }
             second = second.next;

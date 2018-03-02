@@ -37,14 +37,8 @@ public class CWCLinkedList extends WCLinkedList{
     }
 
     private void update(Node current){
-        while(current.prev != null ||current.w.getCount() > current.prev.w.getCount()) {
-            System.out.println("Current: " + current.w.toString());
-            System.out.println("Previous: " + current.prev.w.toString());
-            swap(current);
-
-            System.out.println("New Current: " + current.w.toString());
-            System.out.println("New Previous: " + current.prev.w.toString());
-            //System.out.println("New Previous prev: " + current.prev.prev.w.toString());
+        while(current.prev != null && current.w.getCount() > current.prev.w.getCount()) {
+            swap(current, current.prev);
             current = current.prev;
         }
     }
