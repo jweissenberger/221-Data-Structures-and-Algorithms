@@ -18,4 +18,4 @@ fastest. At the end of the program, an updated dictionary is printed to
 final."name of dictionary".txt that prints out the words of the dictionary and how many
 times each word was called. 
 
-**NOTE** The dictionary is has to come before the text file in the command line
+**NOTE** The dictionary has to come before the text file in the command line
