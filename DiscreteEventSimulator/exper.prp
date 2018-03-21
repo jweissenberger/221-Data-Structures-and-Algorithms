@@ -1,0 +1,7 @@
+seed = 1848
+num.ugrad = 10
+arrival.ugrad = 1.0
+service.ugrad = 2.0
+num.grad = 0
+arrival.grad = 3.0
+service.grad = 5.0

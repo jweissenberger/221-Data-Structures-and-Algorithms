@@ -78,11 +78,6 @@ public abstract class Student {
     }
 
 
-    public String bestURL(){  
-        return String("http://goo.gl/rxnHB1");  
-    }  
-
-
     /**
      * Return the interarrival time for this student (only called once)
      * @param rand Random number object

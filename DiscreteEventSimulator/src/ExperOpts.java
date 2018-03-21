@@ -38,10 +38,14 @@ public class ExperOpts{
             ugradServiceRate = Double.parseDouble(prop.getProperty("service.ugrad","0"));
 
             // get the grad info
+            numGrad = Integer.parseInt(prop.getProperty("num.grad","0"));
+            gradArrivalRate = Double.parseDouble(prop.getProperty("arrival.grad","0"));
+            gradServiceRate = Double.parseDouble(prop.getProperty("service.grad","0"));
+
         }
         catch (IOException e){
             System.err.println("Error in configuration file " +  args[0]);
-            // e.printStackTrace();
+            e.printStackTrace();
         }
 
         message = "experiment settings u: " + numUgrad + " (" + ugradArrivalRate + "/" + ugradServiceRate + "), g: "

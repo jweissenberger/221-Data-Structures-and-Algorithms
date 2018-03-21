@@ -32,6 +32,10 @@ public class Event implements Comparable<Event>{
         return type;
     }
 
+    @Override
+    public int compareTo(Event o) {
+        return 0;
+    }
 
     /**
      * get the Student associated with the Event

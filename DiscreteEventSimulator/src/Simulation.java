@@ -14,8 +14,11 @@ public class Simulation{
         System.out.println(experOpts.getMessage());
 
 	// create a list, called list,  containing Ugrad and Grad objects
+        LinkedList<Student> student = new LinkedList<>();
 	// create a queue, called queue, containing Ugrad and Grad objects (the line)
+        Queue<Student> queue = new LinkedList<>();
 	// create a queue, called calendar, containing the ordered Events
+        Queue<Event> calendar = new LinkedList<>();
         Random rand = new Random(experOpts.getSeed());
         Statistic systemDelay = new Statistic();
         // create a Statistic to store delay results for waiting in the queue (line)
@@ -25,6 +28,7 @@ public class Simulation{
         double time = 0.0;
 
         // create the Ugrad student objects
+
         int studentCount = 0;
         for(int i = 0; i < experOpts.getNumUgrad(); i++) {
             student.add(new Ugrad(studentCount, experOpts.getUgradArrivalRate(), experOpts.getUgradServiceRate()));
@@ -68,12 +72,17 @@ public class Simulation{
             }
         }
 
-       // print the queue delay, like how it is done below  
+       // print the queue delay, like how it is done below
 
+        System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f),  min: %6.3f, max: %3f and", systemDelay.getAverage(),
+                systemDelay.getStandardDeviation(), systemDelay.getMin(), systemDelay.getMax());
+
+        /*
         System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f)" +
                           ", min: %6.3f, max: %6.3 \n",
                 systemDelay.getAverage(), systemDelay.getStandardDeviation(),
                 systemDelay.getMin(), systemDelay.getMax());
+                */
 
     }
 }
