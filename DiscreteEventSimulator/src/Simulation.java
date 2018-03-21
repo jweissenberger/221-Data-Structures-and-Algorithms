@@ -22,6 +22,7 @@ public class Simulation{
         Random rand = new Random(experOpts.getSeed());
         Statistic systemDelay = new Statistic();
         // create a Statistic to store delay results for waiting in the queue (line)
+        Statistic queueDelay = new Statistic();
 
         Event currentEvent;
         Student currentStudent = null;
@@ -71,6 +72,7 @@ public class Simulation{
                         Student nextStudent = queue.peek();
                         nextStudent.setServiceStartTime(time);
                         // add calendar event for the nextStudent's DEPARTURE (see above)
+                        calendar.offer(new Event(time + nextStudent.randServiceDuration(rand), EventType.DEPARTURE, nextStudent));
                     }
                     break;
                     default:
