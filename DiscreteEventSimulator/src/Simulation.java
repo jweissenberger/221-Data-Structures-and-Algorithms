@@ -39,6 +39,12 @@ public class Simulation{
 
         time = 0.0; // let's reset time to zero for the Grad inter-arrivals
         // create a loop, like the one above, that creates Grad objects and arrivals
+        for(int i = 0; i < experOpts.getNumUgrad(); i++) {
+            student.add(new Grad(studentCount, experOpts.getGradArrivalRate(), experOpts.getGradServiceRate()));
+            time += student.get(studentCount).randInterarrivalTime(rand);
+            calendar.offer(new Event(time, EventType.ARRIVAL, student.get(studentCount)));
+            studentCount++;
+        }
 
         while(!calendar.isEmpty()) {
             currentEvent = calendar.poll();
@@ -73,16 +79,12 @@ public class Simulation{
         }
 
        // print the queue delay, like how it is done below
-
-        System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f),  min: %6.3f, max: %3f and", systemDelay.getAverage(),
+        System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f),  min: %6.3f, max: %6.3f \n", systemDelay.getAverage(),
                 systemDelay.getStandardDeviation(), systemDelay.getMin(), systemDelay.getMax());
 
-        /*
-        System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f)" +
-                          ", min: %6.3f, max: %6.3 \n",
-                systemDelay.getAverage(), systemDelay.getStandardDeviation(),
-                systemDelay.getMin(), systemDelay.getMax());
-                */
+
+        System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f),  min: %6.3f, max: %6.3f", systemDelay.getAverage(),
+                systemDelay.getStandardDeviation(), systemDelay.getMin(), systemDelay.getMax());
 
     }
 }
