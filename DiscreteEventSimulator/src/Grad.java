@@ -15,12 +15,12 @@ public class Grad extends Student{
 
     @Override
     public double randInterarrivalTime(Random rand) {
-        return ExpoDistribution.next(arrivalRate, rand);
+        return rand.nextGaussian()*arrivalRate*0.125 + arrivalRate;
     }
 
     @Override
     public double randServiceDuration(Random rand) {
-        return ExpoDistribution.next(serviceRate, rand);
+        return rand.nextGaussian()*serviceRate*0.125 + serviceRate;
     }
 
 }
