@@ -13,7 +13,7 @@ public class Simulation{
 
         System.out.println(experOpts.getMessage());
 
-	// create a list, called list,  containing Ugrad and Grad objects
+	// create a list, called student,  containing Ugrad and Grad objects
         LinkedList<Student> student = new LinkedList<>();
 	// create a queue, called queue, containing Ugrad and Grad objects (the line)
         Queue<Student> queue = new LinkedList<>();
@@ -47,6 +47,10 @@ public class Simulation{
             studentCount++;
         }
 
+        for(int i = calendar.size(); i < ; i--){
+            if (student.get(i))
+        }
+
         while(!calendar.isEmpty()) {
             currentEvent = calendar.poll();
             time = currentEvent.getTime();
@@ -67,6 +71,7 @@ public class Simulation{
                     // let's make certain this DEPARTURE event is for the student at the head of the queue...
                     assert(removedStudent == currentStudent);
                     systemDelay.accept(time - currentStudent.getArrivalTime());
+                    queueDelay.accept(time-currentStudent.getArrivalTime() - currentStudent.getServiceStartTime());
                     // if the queue is not empty, start service of next student
                     if(!queue.isEmpty()){
                         Student nextStudent = queue.peek();
@@ -81,8 +86,8 @@ public class Simulation{
         }
 
        // print the queue delay, like how it is done below
-        System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f),  min: %6.3f, max: %6.3f \n", systemDelay.getAverage(),
-                systemDelay.getStandardDeviation(), systemDelay.getMin(), systemDelay.getMax());
+        System.out.printf("Queue delay (queue only) \n  avg: %6.3f(%5.3f),  min: %6.3f, max: %6.3f \n", queueDelay.getAverage(),
+                queueDelay.getStandardDeviation(), queueDelay.getMin(), queueDelay.getMax());
 
 
         System.out.printf("System delay (queue + service) \n  avg: %6.3f(%5.3f),  min: %6.3f, max: %6.3f", systemDelay.getAverage(),

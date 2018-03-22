@@ -33,8 +33,13 @@ public class Event implements Comparable<Event>{
     }
 
     @Override
-    public int compareTo(Event o) {
-        return 0;
+    public int compareTo(Event otherEvent) {
+        // if the current event is first return 1
+        // if otherEvent is first return -1
+        if (time < otherEvent.getTime()){
+            return 1;
+        }
+        else{return -1;}
     }
 
     /**
