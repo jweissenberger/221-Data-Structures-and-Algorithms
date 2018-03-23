@@ -38,6 +38,7 @@ public class ExperOpts{
             ugradServiceRate = Double.parseDouble(prop.getProperty("service.ugrad","0"));
 
             // get the grad info
+            // this is the grad information that I added in a similar way from above
             numGrad = Integer.parseInt(prop.getProperty("num.grad","0"));
             gradArrivalRate = Double.parseDouble(prop.getProperty("arrival.grad","0"));
             gradServiceRate = Double.parseDouble(prop.getProperty("service.grad","0"));

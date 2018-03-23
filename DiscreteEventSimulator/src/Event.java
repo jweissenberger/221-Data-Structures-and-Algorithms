@@ -36,10 +36,14 @@ public class Event implements Comparable<Event>{
     public int compareTo(Event otherEvent) {
         // if the current event is first return 1
         // if otherEvent is first return -1
-        if (time < otherEvent.getTime()){
+        // if they are the same return 0
+        if (this.time > otherEvent.time){
             return 1;
         }
-        else{return -1;}
+        else if (this.time < otherEvent.time){
+            return -1;
+        }
+        else{return 0;}
     }
 
     /**

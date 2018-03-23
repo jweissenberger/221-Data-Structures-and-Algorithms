@@ -13,11 +13,13 @@ public class Grad extends Student{
         this.serviceRate = serviceRate;
     }
 
+    // this calculates the random time interval
     @Override
     public double randInterarrivalTime(Random rand) {
         return rand.nextGaussian()*arrivalRate*0.125 + arrivalRate;
     }
 
+    // this calcualtes a random service duration
     @Override
     public double randServiceDuration(Random rand) {
         return rand.nextGaussian()*serviceRate*0.125 + serviceRate;
