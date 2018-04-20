@@ -8,17 +8,13 @@ public class Inventory {
 
     public static void main(String[] args) {
 
-        //Handels tha exception that there is not a file inputted
-        for (int i = 0; i < args.length; i++){
-            if (args.length == 0){ //the number of files you want to read
-                System.out.println("ussage error ...");
-                System.exit(1);
-            }
-        }
+        BinarySearchTree<String> BST = new BinarySearchTree<>();
 
         //Read the invent.dat file
         try {
             Scanner input = new Scanner(new File(args[0])); //reading in the file
+
+
 
             while (input.hasNext()) {
                 String line = input.nextLine();
@@ -26,8 +22,18 @@ public class Inventory {
                 String[] splited = line.split("\\s+");
                 System.out.println(splited[0]);
 
-                //splited[0] will have the add or delete
-                //splited[1] will have the data you're putting into the node
+                if(splited[0] == "a"){
+                    //check contains
+                    BST.add(splited[1]);
+                }
+                else if (splited[0] == "d"){
+                    //check contains
+                    BST.remove(splited[1]);
+                }
+                else{
+                    System.out.println("Illegal Argument");
+                    throw new IllegalArgumentException();
+                }
 
 
                 //once you do all your work do this
@@ -40,6 +46,7 @@ public class Inventory {
             System.out.println("File not found");
             System.exit(2);
         }
+
 
     }
 }

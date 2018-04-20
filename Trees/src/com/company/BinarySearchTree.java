@@ -99,7 +99,7 @@ public class BinarySearchTree<E> {
 
     //helper method that returns node containing data
     protected BinaryTreeNode<E> nodeContaining(E data){
-        for(BinaryTreeNode<E> n = root; n!=null;){
+        for(BinaryTreeNode<E> n = root; n !=null;){
             int comparisonResult = compare(data, n.getData());
             if (comparisonResult == 0){
                 return n;
@@ -147,7 +147,7 @@ public class BinarySearchTree<E> {
         if (n.getLeft() == null){return;}
         BinaryTreeNode<E> oldLeft = n.getLeft();
 
-        //set right child of n (piv
+        //set right child of n
         n.setRight(oldLeft.getRight());
 
         //determine if rotated around BST root
@@ -160,5 +160,7 @@ public class BinarySearchTree<E> {
         //set left child of R to n (the pivot)
         oldLeft.setRight(n);
     }
+
+
 
 }

@@ -139,4 +139,17 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
     public String toString(){
         return data.toString();
     }
+
+    public void printTree(){
+        System.out.print("(");
+        if (this.left !=null){
+            this.left.printTree();
+        }
+        System.out.print(this.data);
+
+        if(this.right != null){
+            this.right.printTree();
+        }
+        System.out.println(")");
+    }
 }

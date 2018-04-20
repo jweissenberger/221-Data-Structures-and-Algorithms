@@ -3,14 +3,13 @@ import java.util.Comparator;
 
 public class AVLTree<E> extends BinarySearchTree<E> {
 
-    /*
     //constructs an empty AVL that only accepts Comparables
     public AVLTree(){
         this(null);
     }
 
     //constructs an AVL that orders its items according to the given comparator
-    public AVLTree(Comparable<E> c){
+    public AVLTree(Comparator<E> c){
         super(c);
     }
 
@@ -36,6 +35,22 @@ public class AVLTree<E> extends BinarySearchTree<E> {
             super.remove(data);
             //rebalance starting at n
             rebalance(n);
+        }
+    }
+
+    protected int getHeight(BinaryTreeNode<E> n){
+        if(n == null){
+            return -1;
+        }
+        else{
+            int leftD = getHeight(n.getLeft());
+            int rightD = getHeight(n.getRight());
+            if(leftD > rightD){
+                return leftD +1;
+            }
+            else {
+                return rightD +1;
+            }
         }
     }
 
@@ -70,6 +85,5 @@ public class AVLTree<E> extends BinarySearchTree<E> {
         }
     }
 
-    */
 
 }
