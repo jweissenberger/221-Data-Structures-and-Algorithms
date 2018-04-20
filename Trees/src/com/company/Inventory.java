@@ -9,6 +9,7 @@ public class Inventory {
     public static void main(String[] args) {
 
         BinarySearchTree<String> BST = new BinarySearchTree<>();
+        AVLTree<String> AVL = new AVLTree<>();
 
         //Read the invent.dat file
         try {
@@ -18,17 +19,16 @@ public class Inventory {
 
             while (input.hasNext()) {
                 String line = input.nextLine();
-                line = line.toLowerCase();
-                String[] splited = line.split("\\s+");
-                System.out.println(splited[0]);
+                line = line.toUpperCase();
+                String[] parsed = line.split("\\s+");
 
-                if(splited[0] == "a"){
-                    //check contains
-                    BST.add(splited[1]);
+                if(parsed[0].equals("A")){
+                    BST.add(parsed[1]);
+                    AVL.add(parsed[1]);
                 }
-                else if (splited[0] == "d"){
-                    //check contains
-                    BST.remove(splited[1]);
+                else if (parsed[0].equals("D")){
+                    BST.remove(parsed[1]);
+                    AVL.remove(parsed[1]);
                 }
                 else{
                     System.out.println("Illegal Argument");
@@ -36,8 +36,6 @@ public class Inventory {
                 }
 
 
-                //once you do all your work do this
-                splited = null;
             }
 
 
@@ -46,6 +44,13 @@ public class Inventory {
             System.out.println("File not found");
             System.exit(2);
         }
+
+        System.out.println("Number of inventory Updates: " + BST.updates);
+
+        System.out.println("\nBST, tree size: " + BST.size+ ", Height: " + BST.getHeight(BST.root));
+        BST.getRoot().printTree();
+        System.out.println("\n \nAVL, tree size: " + BST.size + ", Height: " + AVL.getHeight(AVL.getRoot()));
+        AVL.getRoot().printTree();
 
 
     }

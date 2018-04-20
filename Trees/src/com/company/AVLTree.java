@@ -1,6 +1,8 @@
 package com.company;
 import java.util.Comparator;
 
+//AVL class code
+
 public class AVLTree<E> extends BinarySearchTree<E> {
 
     //constructs an empty AVL that only accepts Comparables
@@ -23,14 +25,13 @@ public class AVLTree<E> extends BinarySearchTree<E> {
         if(n != null) rebalance(n);
     }
 
+    //removes node containing data
     @Override
     public void remove(E data){
         //find the node containing the data
         BinaryTreeNode<E> n = nodeContaining(data);
 
         if(n != null){
-            //code here to determine the node n where the rebalance should start (done before removal)
-
             //remove node containing the data
             super.remove(data);
             //rebalance starting at n
@@ -38,6 +39,7 @@ public class AVLTree<E> extends BinarySearchTree<E> {
         }
     }
 
+    //method that returns the height given a node
     protected int getHeight(BinaryTreeNode<E> n){
         if(n == null){
             return -1;
@@ -78,7 +80,15 @@ public class AVLTree<E> extends BinarySearchTree<E> {
             else if(heightDiff == -2){
                 heightDiff = getHeight(node.getRight().getLeft())-getHeight(node.getRight().getRight());
 
-                //magic right right or right- left rotate code
+                if (heightDiff < 0) {
+                    rotateLeft(node);
+                }
+
+                else{
+                    rotateRight(node.getRight());
+                    rotateLeft(node);
+                }
+
             }
 
             node = node.getParent();

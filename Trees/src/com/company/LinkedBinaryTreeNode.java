@@ -150,6 +150,6 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
         if(this.right != null){
             this.right.printTree();
         }
-        System.out.println(")");
+        System.out.print(")");
     }
 }

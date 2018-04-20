@@ -14,6 +14,10 @@ public class BinarySearchTree<E> {
         this(null);
     }
 
+    //initialize counters
+    protected int size = 0;
+    protected int updates = 0;
+
     //constructs a BST that orders its items according to the given comparator
     public BinarySearchTree(Comparator<E> c){
         comparator = c;
@@ -28,6 +32,8 @@ public class BinarySearchTree<E> {
     public void add(E data){
         if (root == null){
             root = new LinkedBinaryTreeNode<E>(data);
+            size +=1;
+            updates +=1;
         }
         BinaryTreeNode<E> n = root;
         while (true){
@@ -39,6 +45,8 @@ public class BinarySearchTree<E> {
             else if (comparisonResult < 0){
                 if(n.getLeft() == null){
                     n.setLeft(new LinkedBinaryTreeNode<E>(data));
+                    size +=1;
+                    updates +=1;
                     return;
                 }
                 n = n.getLeft();
@@ -47,6 +55,8 @@ public class BinarySearchTree<E> {
             else{
                 if(n.getRight() == null){
                     n.setRight(new LinkedBinaryTreeNode<E>(data));
+                    size +=1;
+                    updates +=1;
                     return;
                 }
                 n = n.getRight();
@@ -65,14 +75,24 @@ public class BinarySearchTree<E> {
             BinaryTreeNode<E> predecessor = predecessor(node);
             node.setData(predecessor.getData());
             node = predecessor;
+            size -=1;
+            updates +=1;
         }
         BinaryTreeNode<E> pullUp = (node.getLeft() == null)?node.getRight():node.getLeft();
-        if(node == root){ setRoot(pullUp);}
+        if(node == root){
+            setRoot(pullUp);
+            size -= 1;
+            updates +=1;
+        }
         else if(node.getParent().getLeft()==node){
             node.getParent().setLeft(pullUp);
+            size -=1;
+            updates +=1;
         }
         else{
             node.getParent().setRight(pullUp);
+            size -=1;
+            updates +=1;
         }
     }
 
@@ -147,8 +167,8 @@ public class BinarySearchTree<E> {
         if (n.getLeft() == null){return;}
         BinaryTreeNode<E> oldLeft = n.getLeft();
 
-        //set right child of n
-        n.setRight(oldLeft.getRight());
+        //set left child of n
+        n.setLeft(oldLeft.getRight());
 
         //determine if rotated around BST root
         if(n.getParent() == null){root = oldLeft;}
@@ -161,6 +181,28 @@ public class BinarySearchTree<E> {
         oldLeft.setRight(n);
     }
 
+    //returns the height of the bst
+    protected int getHeight(BinaryTreeNode<E> n){
+        int heightLeft = 0;
+        int heightRight = 0;
 
+        if (n==null){
+            return -1;
+        }
+        if(n.getLeft() == null && n.getRight() ==null){return 0;}
+        if (n.getLeft()!= null){
+            heightLeft = getHeight(n.getLeft());
+        }
+        if (n.getRight()!= null){
+            heightRight = getHeight(n.getRight());
+        }
+        if(heightLeft > heightRight){
+            return heightLeft+1;
+        }
+        else{
+            return heightRight+1;
+        }
+
+    }
 
 }

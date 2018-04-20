@@ -45,4 +45,6 @@ public interface BinaryTreeNode<E> {
     //visits the nodes inorder
     void traverseInorder(Visitor<E> visitor);
 
+    void printTree();
+
 }
