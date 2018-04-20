@@ -3,6 +3,7 @@ import java.util.Comparator;
 
 public class AVLTree<E> extends BinarySearchTree<E> {
 
+    /*
     //constructs an empty AVL that only accepts Comparables
     public AVLTree(){
         this(null);
@@ -69,23 +70,6 @@ public class AVLTree<E> extends BinarySearchTree<E> {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    */
 
 }
