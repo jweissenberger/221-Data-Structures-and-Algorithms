@@ -129,7 +129,36 @@ public class BinarySearchTree<E> {
         BinaryTreeNode<E> oldRight = n.getRight();
 
         //set right child of n (piv
+        n.setRight(oldRight.getLeft());
 
+        //determine if rotated around BST root
+        if(n.getParent() == null){root = oldRight;}
+        else if (n.getParent().getLeft() == n){n.getParent().setLeft(oldRight);}
+        else{
+            n.getParent().setRight(oldRight);
+        }
+
+        //set left child of R to n (the pivot)
+        oldRight.setLeft(n);
+    }
+
+    //rotate right around the given node
+    protected void rotateRight(BinaryTreeNode<E> n){
+        if (n.getLeft() == null){return;}
+        BinaryTreeNode<E> oldLeft = n.getLeft();
+
+        //set right child of n (piv
+        n.setRight(oldLeft.getRight());
+
+        //determine if rotated around BST root
+        if(n.getParent() == null){root = oldLeft;}
+        else if (n.getParent().getRight() == n){n.getParent().setRight(oldLeft);}
+        else{
+            n.getParent().setLeft(oldLeft);
+        }
+
+        //set left child of R to n (the pivot)
+        oldLeft.setRight(n);
     }
 
 }
