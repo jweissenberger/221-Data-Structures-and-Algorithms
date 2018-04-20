@@ -1,3 +1,7 @@
+/* Jack Weissenberger Data Structures and Algorithms 221
+ * proj4
+ */
+
 package com.company;
 
 import java.io.File;
@@ -15,13 +19,14 @@ public class Inventory {
         try {
             Scanner input = new Scanner(new File(args[0])); //reading in the file
 
-
-
+            //read file
             while (input.hasNext()) {
                 String line = input.nextLine();
                 line = line.toUpperCase();
+                //parse line at the space
                 String[] parsed = line.split("\\s+");
 
+                //gets the action to delete or add and then adds the second part of the string
                 if(parsed[0].equals("A")){
                     BST.add(parsed[1]);
                     AVL.add(parsed[1]);
@@ -30,6 +35,7 @@ public class Inventory {
                     BST.remove(parsed[1]);
                     AVL.remove(parsed[1]);
                 }
+                //exception if the first char is not an A or a D
                 else{
                     System.out.println("Illegal Argument");
                     throw new IllegalArgumentException();
