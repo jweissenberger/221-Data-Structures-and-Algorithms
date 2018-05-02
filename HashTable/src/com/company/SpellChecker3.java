@@ -24,15 +24,6 @@ public class SpellChecker3{
 
     public static void main(String[] args) {
 
-        AVLHashSet<String> words = new AVLHashSet<>();
-
-        words.add("aa");
-        words.add("aa");
-        words.add("bb");
-        words.add("cc");
-
-    }
-        /*
         AVLHashSet<String> dictionary;  // set of dictionary words
         AVLHashSet<String> misspelled;  // set of mispelled words
         int numWords = 0;               // number of words in the file
@@ -112,7 +103,7 @@ public class SpellChecker3{
      * @return an int representing the number of words found in the line
      */
 
-        /*
+
     private static int processTextLine(String aLine, AVLHashSet<String> dictionary, AVLHashSet<String> misspelled){
         int numWords = 0;
         // remove punctuation
@@ -139,7 +130,7 @@ public class SpellChecker3{
      * @param dictionary list of dictionary words
      */
 
-        /*
+
     private static void processDictionaryLine(String line, AVLHashSet<String>dictionary){
         // assuming each line is a word
         line = line.replaceAll(" ", "").toLowerCase();
@@ -147,7 +138,6 @@ public class SpellChecker3{
             dictionary.add(line);
     }
 
-    */
 }
 
 
