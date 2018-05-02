@@ -24,6 +24,13 @@ public class SpellChecker3{
 
     public static void main(String[] args) {
 
+        AVLHashSet<String> words = new AVLHashSet<>();
+
+        words.add("aa");
+        words.add("aa");
+        words.add("bb");
+        words.add("cc");
+
     }
         /*
         AVLHashSet<String> dictionary;  // set of dictionary words

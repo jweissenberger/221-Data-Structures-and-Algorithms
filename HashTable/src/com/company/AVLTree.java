@@ -22,7 +22,9 @@ public class AVLTree<E> extends BinarySearchTree<E> {
         //find the new node containing the data
         BinaryTreeNode<E> n = nodeContaining(data);
         //if there is a new node, then rebalance
-        if(n != null) rebalance(n);
+        if(n != null){
+            rebalance(n);
+        }
     }
 
     //removes node containing data
