@@ -18,6 +18,7 @@ public class AVLHashSet<E> {
     public boolean add(E data){
         //hash the data
         int hash = data.hashCode();
+        hash = Math.abs(hash);
         int index = hash%table.length;
 
         if(table[index] == null){
@@ -42,9 +43,15 @@ public class AVLHashSet<E> {
     }
 
     public boolean contains(E data){
+        int hash = data.hashCode();
+        hash = Math.abs(hash);
+        int index = hash%table.length;
+
         if(table[index] == null){
-            table[index] = new AVLTree<>();
+            return false;
         }
+        else{ return table[index].contains(data);}
+
     }
 
 
@@ -52,8 +59,11 @@ public class AVLHashSet<E> {
 
         AddToList<E> visitor = new AddToList<E>(list);
 
-        for (int i = 0; i< table.length; i++){
-            table[i].getRoot().traverseInorder(visitor);
+
+        for (int i = 0; i < table.length; i++){
+            if (table[i] != null) {
+                table[i].getRoot().traverseInorder(visitor);
+            }
         }
         return list;
     }
