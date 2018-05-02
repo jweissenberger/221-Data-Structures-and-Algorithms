@@ -32,10 +32,16 @@ public class AVLTree<E> extends BinarySearchTree<E> {
         BinaryTreeNode<E> n = nodeContaining(data);
 
         if(n != null){
-            //remove node containing the data
-            super.remove(data);
-            //rebalance starting at n
-            rebalance(n);
+            if(n.getLeft() != null && n.getRight()!= null){
+                n = predecessor(n).getParent();
+                super.remove(data);
+                rebalance(n);
+            }
+            else{
+                n = n.getParent();
+                super.remove(data);
+                rebalance(n);
+            }
         }
     }
 

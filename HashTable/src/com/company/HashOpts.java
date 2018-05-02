@@ -8,6 +8,8 @@
  * @version 0.1, Apr. 22, 2018
  */
 
+package com.company;
+
 public class HashOpts{
     private String dFile = null;   // dictionary file name
     private String tFile = null;   // text file name
